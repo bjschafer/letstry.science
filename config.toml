@@ -1,33 +1,84 @@
 baseURL = "https://letstry.science/"
 title = "Snippets of Nifty"
-copyright = "Copyright © 2019, Braxton Schafer"
 languageCode = "en-US"
-theme = "indigo"
+theme = "binario"
+paginate = "10" # Number of posts per page
+disqusShortname = "" # Enable comments by entering your Disqus shortname
+googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 
-[params]
-  Author = "Braxton Schafer"
-  Description = "Woodworking, tech, infosec, etc."
-  Subtitle = "Thoughts and things"
-  Avatar = "images/site-logo.svg"
-  Biography = "A short description, a few sentences describing the author. Set the 'ShowBio' parameter to false to hide this."
-  ShowBio = false
-  PermalinkText = "🔗"
+[menu]
 
-  # Contact/social-network identifiers for social icons
-  EmailAddress = "braxton@cmdcentral.xyz"
-  GitHubUser = "bjschafer"
-  GitLabUser = "bjschafer"
-  KeybaseUser = "bjschafer"
-  LinkedInUser = "bjschafer"
-  RedditUser = "bronxasaur"
-  StackOverflowUser = "bjschafer"
-  TwitterUser = "bronxasaur"
+  [[menu.main]]
+    identifier = "portfolio"
+    name = "Portfolio"
+    #pre = "<i class='fa fa-heart'></i>"
+    url = "https://bjschafer.com"
+    #weight = -110
 
-  # These are parameters used for indieweb identity. You should set these along
-  # with the above email/social network parameters.
-  [params.indieWeb]  
-    EmailAddress = "braxton@cmdcentral.xyz"
-    GitHubUser = "bjschafer"
-    TwitterUser = "bronxasaur"
-    Country = "USA"
-    City = "Somewhere"
+[Author] # Used in authorbox
+  name = "Braxton Schafer"
+  bio = "Braxton Schafer enjoys technology, woodworking, music, and learning."
+  avatar = "img/avatar.png"
+
+[Params]
+  description = "Snippets of Nifty" # Site Description. Used in meta description
+  copyright = "Copyright © 2019, Braxton Schafer"
+  opengraph = true # Enable OpenGraph if true
+  twitter_cards = true # Enable Twitter Cards if true
+  columns = 2 # Set the number of cards columns. Possible values: 1, 2, 3
+  mainSections = ["blog"] # Set main page sections
+  post_meta = ["date", "categories"] # Enable post meta fields in given order
+  dateFormat = "January 02, 2006" # Change the format of dates
+  colorTheme = "" # dark-green, dark-blue, dark-red, dark-violet
+  mainMenuAlignment = "right" # Align main menu (desktop version) to the right side
+  authorbox = true # Show authorbox at bottom of single pages if true
+  toc = true # Enable Table of Contents for all site pages
+  tocOpen = true # Open Table of Contents block. Optional
+  comments = false # Enable comments for all site pages
+  related = false # Enable Related content for single pages
+  mathjax = true # Enable MathJax for all site pages
+  mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" # Specify MathJax path. Optional
+  mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # Specify MathJax config. Optional
+  hideNoPostsWarning = false # Don't show no posts empty state warning in main page, if true
+
+[Params.Social]
+  email = "braxton@cmdcentral.xyz"
+  twitter = "bronxasaur"
+  instagram = "bronxasaur"
+  linkedin = "bjschafer"
+  github = "bjschafer"
+  gitlab = "bjschafer"
+  stackoverflow = "bjschafer"
+  mastodon = "https://some.instance/@username"
+
+[Params.Share] # Post Share block
+  facebook = true
+  twitter = true
+  reddit = true
+  telegram = true
+  linkedin = true
+  pocket = true
+
+# Web App Manifest settings
+# https://www.w3.org/TR/appmanifest/
+# https://developers.google.com/web/fundamentals/web-app-manifest/
+[Params.Manifest]
+  name = "Let's Try Science"
+  shortName = "letstry.science"
+  display = "browser"
+  backgroundColor = "#2a2a2a"
+  themeColor = "#1b1b1b"
+  description = "Snippets of Nifty"
+  orientation = "portrait"
+  startUrl = "/"
+  scope = "/"
+
+[outputFormats]
+  [outputFormats.MANIFEST]
+    mediaType = "application/json"
+    baseName = "manifest"
+    isPlainText = true
+    notAlternative = true
+
+[outputs]
+  home = ["HTML", "RSS", "MANIFEST"]

@@ -1,3 +1,9 @@
 [submodule "themes/indigo"]
 	path = themes/indigo
 	url = https://github.com/AngeloStavrow/indigo.git
+[submodule "themes/aether"]
+	path = themes/aether
+	url = https://github.com/josephhutch/aether.git
+[submodule "themes/binario"]
+	path = themes/binario
+	url = https://github.com/vimux/binario
