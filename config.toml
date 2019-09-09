@@ -49,7 +49,6 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   github = "bjschafer"
   gitlab = "bjschafer"
   stackoverflow = "bjschafer"
-  mastodon = "https://some.instance/@username"
 
 [Params.Share] # Post Share block
   facebook = true
