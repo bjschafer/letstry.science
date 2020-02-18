@@ -117,7 +117,7 @@ All you'll want to do is set up a snippet (mine go in `/etc/nginx/snippets`), ca
 proxy_set_header        Host $host;
 proxy_set_header        X-Real-IP $remote_addr;
 proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
-proxy_set_header        X-Forwarded-Proto $scheme #;proxy_http_version 1.1;
+proxy_set_header        X-Forwarded-Proto $scheme;
 proxy_set_header        X-Forwarded-Host $http_host;
 proxy_set_header        X-Forwarded-Uri $request_uri;
 proxy_set_header        X-Forwarded-Ssl on;
