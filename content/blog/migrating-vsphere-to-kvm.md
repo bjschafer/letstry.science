@@ -108,11 +108,10 @@ To successfully and easily migrate Windows VMs, you'll need a couple of things:
 There were a couple of things I didn't find solutions for when I looked (admittedly, I didn't look particularly hard...):
 
 1. Network adapters. I had to edit the VM's config to use the appropriate bridge (see above)
-2. Disk config. I had to change the disk XML per disk, per VM to look similar to this:
+2. Disk config. I had to change the disk XML per disk, per VM to look similar to this. When you migrate, you'll see what I mean:
 ```xml
 <disk type='file' device='disk'>
   <driver name='qemu' type='raw' cache='none'/>
   <source file='/flash/VMs/Disks/VMname-sda' index='1'/>
 ```
-When you migrate, you'll see what I mean.
 3. CPU config. It defaults to an emulated CPU, which is great if you intend to live migrate VMs. Since I'm rocking a single host, I decided to reduce the performance penalty and instead expose the host CPU model.
