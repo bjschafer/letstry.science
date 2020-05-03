@@ -1,10 +1,8 @@
 ---
 title: "About"
 draft: false
-menu: main
+toc: false
 ---
-
-## About me
 
 I'm a giant nerd who deals in FOSS, TTRPGs, and more. I also enjoy woodworking, music, and reading.
 

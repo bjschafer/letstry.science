@@ -1,83 +1,61 @@
-baseURL = "https://letstry.science/"
+baseURL = "https://letstry.science"
+languageCode = "en-us"
 title = "Snippets of Nifty"
-languageCode = "en-US"
-theme = "binario"
-paginate = "6" # Number of posts per page
-disqusShortname = "" # Enable comments by entering your Disqus shortname
-googleAnalytics = "" # Enable Google Analytics by entering your tracking id
+copyright = "Copyright © 2019-2020, Braxton Schafer"
+theme = "npq-hugo"
+pygmentsUseClasses=true
+
+[params]
+  author = "Braxton Schafer"
+  description = "Snippets of Nifty"
+  keywords = "tech howto guide woodworking music"
+  useAvatar = false
+  microBlogSection = "microposts"
+  displayMicroBlog = true
+  displayRecent = true
+  recentMax = 4
+  mail = "braxton@cmdcentral.xyz"
 
 [menu]
 
   [[menu.main]]
-    identifier = "portfolio"
+    name = "Home"
+    pre = "<i class='fas fa-home fa-sm'></i>"
+    url = "/"
+    weight = -9
+
+  [[menu.main]]
+    name = "Blog"
+    pre = "<i class='fas fa-dumpster-fire'></i>"
+    url = "/blog/"
+    weight = -8
+
+  [[menu.main]]
+    name = "Tags"
+    pre = "<i class='fas fa-tags fa-ms'></i>"
+    url = "/tags/"
+    weight = -7
+
+  [[menu.main]]
+    name = "About"
+    pre = "<i class='fas fa-info'></i>"
+    url = "/about/"
+    weight = -6
+
+  [[menu.main]]
+    name = "GitLab"
+    pre = "<i class='fab fa-gitlab'></i>"
+    url = "https://gitlab.com/bjschafer"
+    weight = -3
+
+  [[menu.main]]
+    name = "Twitter"
+    pre = "<i class='fab fa-twitter'></i>"
+    url = "https://twitter.com/bronxasaur"
+    weight = -1
+
+  [[menu.main]]
     name = "Portfolio"
-    #pre = "<i class='fa fa-heart'></i>"
+    pre = "<i class='fas fa-briefcase'></i>"
     url = "https://bjschafer.com"
-    #weight = -110
-
-[Author] # Used in authorbox
-  name = "Braxton Schafer"
-  bio = "Braxton Schafer enjoys technology, woodworking, music, and learning."
-  avatar = "img/avatar.png"
-
-[Params]
-  description = "Snippets of Nifty" # Site Description. Used in meta description
-  copyright = "Copyright © 2019, Braxton Schafer"
-  opengraph = true # Enable OpenGraph if true
-  twitter_cards = true # Enable Twitter Cards if true
-  columns = 2 # Set the number of cards columns. Possible values: 1, 2, 3
-  mainSections = ["blog"] # Set main page sections
-  post_meta = ["date", "categories"] # Enable post meta fields in given order
-  dateFormat = "January 02, 2006" # Change the format of dates
-  colorTheme = "dark-green" # dark-green, dark-blue, dark-red, dark-violet
-  mainMenuAlignment = "right" # Align main menu (desktop version) to the right side
-  authorbox = true # Show authorbox at bottom of single pages if true
-  toc = true # Enable Table of Contents for all site pages
-  tocOpen = true # Open Table of Contents block. Optional
-  comments = false # Enable comments for all site pages
-  related = false # Enable Related content for single pages
-  mathjax = true # Enable MathJax for all site pages
-  mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" # Specify MathJax path. Optional
-  mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # Specify MathJax config. Optional
-  hideNoPostsWarning = false # Don't show no posts empty state warning in main page, if true
-
-[Params.Social]
-  email = "braxton@cmdcentral.xyz"
-  twitter = "bronxasaur"
-  instagram = "bronxasaur"
-  linkedin = "bjschafer"
-  github = "bjschafer"
-  gitlab = "bjschafer"
-  stackoverflow = "bjschafer"
-
-[Params.Share] # Post Share block
-  facebook = true
-  twitter = true
-  reddit = true
-  telegram = true
-  linkedin = true
-  pocket = true
-
-# Web App Manifest settings
-# https://www.w3.org/TR/appmanifest/
-# https://developers.google.com/web/fundamentals/web-app-manifest/
-[Params.Manifest]
-  name = "Let's Try Science"
-  shortName = "letstry.science"
-  display = "browser"
-  backgroundColor = "#2a2a2a"
-  themeColor = "#1b1b1b"
-  description = "Snippets of Nifty"
-  orientation = "portrait"
-  startUrl = "/"
-  scope = "/"
-
-[outputFormats]
-  [outputFormats.MANIFEST]
-    mediaType = "application/json"
-    baseName = "manifest"
-    isPlainText = true
-    notAlternative = true
-
-[outputs]
-  home = ["HTML", "RSS", "MANIFEST"]
+    weight = 110
