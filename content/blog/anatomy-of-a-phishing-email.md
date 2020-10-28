@@ -57,7 +57,7 @@ Details: RAR 5, encrypted headers
 
 The shortcut file tries to be clever for those who hide file extensions and call itself an XML file. It's actually a shortcut to cmd to execute the pdf file. That's right, the PDF file is actually a PE32 .NET app -- at least according to our friend `file`. And indeed, the first 2 hex bytes are good 'ol `0x4d5a`.
 
-Passing it into our good friend ILSpy, it's predictably obfuscated. Interestingly enough, it's a WinForms app. Embedded in `resx` files are some small `.bmp` files that don't seem to show anything interesting. Incidentally, [GCHQ Cyberchef](https://gchq.github.io/Cyberchef) is super handy for fiving deep and figuring out _what_ something is. (Yes, that it's base64 is obvious; less obvious is the `.bmp` signature). There's a variety of obfuscated strings in the `resx` files, some of which appear to be deobfuscated in code.
+Passing it into our good friend ILSpy, it's predictably obfuscated. Interestingly enough, it's a WinForms app. Embedded in `resx` files are some small `.bmp` files that don't seem to show anything interesting. Incidentally, [GCHQ CyberChef](https://gchq.github.io/CyberChef) is super handy for fiving deep and figuring out _what_ something is. (Yes, that it's base64 is obvious; less obvious is the `.bmp` signature). There's a variety of obfuscated strings in the `resx` files, some of which appear to be deobfuscated in code.
 
 ### Dynamic
 
