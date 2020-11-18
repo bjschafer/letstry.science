@@ -18,6 +18,8 @@ A further problem I have is the divide between work and personal. I have differe
 
 Some of this boils down to discipline -- some would say I need to just pick something and stick with it. I don't _disagree_, but I also don't exactly agree -- I need to find something that really works with me and meshes with my mindbrain. Others might suggest something like GTD, Inbox Zero, Bullet Journaling, etc. Those are all great concepts, and ones I've explored. However they tend to gloss over implementation details, and there's the rub.
 
+## Categorization
+
 Broadly, I divide systems into 4 different categories:
 
 1. ToDo lists
