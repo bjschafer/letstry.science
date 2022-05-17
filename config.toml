@@ -1,7 +1,7 @@
 baseURL = "https://letstry.science"
 languageCode = "en-us"
 title = "Snippets of Nifty"
-copyright = "Copyright © 2019-2020, Braxton Schafer"
+copyright = "Copyright © 2019-2022, Braxton Schafer"
 theme = "npq-hugo"
 pygmentsUseClasses=true
 
@@ -43,9 +43,9 @@ pygmentsUseClasses=true
     weight = -6
 
   [[menu.main]]
-    name = "GitLab"
-    pre = "<i class='fab fa-gitlab'></i>"
-    url = "https://gitlab.com/bjschafer"
+    name = "GitHub"
+    pre = "<i class='fab fa-github'></i>"
+    url = "https://github.com/bjschafer"
     weight = -3
 
   [[menu.main]]
