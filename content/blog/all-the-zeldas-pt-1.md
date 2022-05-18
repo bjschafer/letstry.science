@@ -1,6 +1,6 @@
 ---
 title: ALL the Zeldas (pt. 1)
-date: 2022-05-18T13:28:42-06:00
+date: 2022-05-18T12:28:42-06:00
 draft: false
 categories:
   - games
