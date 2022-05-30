@@ -7,7 +7,9 @@
     {{ with .Params.githubrepo}}
        github repository : <a href="{{.}}">{{.}}</a>
     {{end}}  
+    {{ if (.Params.toc) }}
     {{.TableOfContents}}
+    {{ end }}
     {{.Content}}
     {{if ne .Section ""}}
     <div class="nav-next-prev">
