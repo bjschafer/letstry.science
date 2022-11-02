@@ -50,8 +50,9 @@ pygmentsUseClasses=true
     
   [[menu.main]]
     name = "Mastodon"
-    pre = "<a rel='me' href='https://mastodon.online/@bronxasaur'><i class='fab fa-mastodon'></i></a>"
+    pre = "<i class='fab fa-mastodon'></i>"
     url = "https://mastodon.online/@bronxasaur"
+    post = "me"
     weight = -2
 
   [[menu.main]]

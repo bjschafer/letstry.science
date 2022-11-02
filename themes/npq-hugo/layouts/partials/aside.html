@@ -18,8 +18,12 @@
         {{ range .Site.Menus.main }}
             {{ $url := urls.Parse .URL }}		
             <a href="{{ $url }}"
+               {{/* do gross stuff to enable rel=me for mastodon 2022-11-02 .bjs */}}
+                {{ if ne .Post "" }}
+                    rel="{{ .Post }}"
+                {{end}}
                 {{ if ne $url.Host ""}}
-                    target="_blanck"
+                    target="_blank"
                 {{end}}
             >
                 {{ .Pre }}
