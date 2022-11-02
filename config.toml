@@ -47,6 +47,12 @@ pygmentsUseClasses=true
     pre = "<i class='fab fa-github'></i>"
     url = "https://github.com/bjschafer"
     weight = -3
+    
+  [[menu.main]]
+    name = "Mastodon"
+    pre = "<a rel='me' href='https://mastodon.online/@bronxasaur'><i class='fab fa-mastodon'></i></a>"
+    url = "https://mastodon.online/@bronxasaur"
+    weight = -2
 
   [[menu.main]]
     name = "Twitter"
