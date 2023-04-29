@@ -1,0 +1,74 @@
+baseURL: "https://letstry.science"
+languageCode: "en-us"
+title: "Snippets of Nifty"
+copyright: "Copyright © 2019-2023, Braxton Schafer"
+theme: ["gitlab.com/gabmus/hugo-ficurinia"]
+enableRobotsTXT: true
+
+permalinks:
+  posts: /:year/:month/:slug/
+  page: /:slug/
+
+params:
+  author: "Braxton Schafer"
+  description: "Snippets of Nifty"
+  keywords: "tech howto guide woodworking music"
+  email: "braxton@cmdcentral.xyz"
+
+  paperCards: true
+  buttonTags: true
+  bigArticleTitle: true
+
+  enableShareOnFediverse: true
+
+menu:
+  main:
+    - identifier: about
+      name: About
+      url: /about/
+      weight: -6
+    - identifier: portfolio
+      name: Portfolio
+      url: https://bjschafer.com
+      weight: 110
+  icons:
+    - identifier: github
+      name: GitHub
+      url: https://github.com/bjschafer
+      weight: -3
+    - identifier: mastodon
+      name: Mastodon
+      url: https://mastodon.online/@bronxasaur
+      weight: -2
+    - identifier: twitter
+      name: Twitter
+      url: https://twitter.com/bronxasaur
+      weight: -1
+    
+        #[menu]
+        #
+        #
+        #  [[menu.main]]
+        #    name: "GitHub"
+        #    pre: "<i class='fab fa-github'></i>"
+        #    url: "https://github.com/bjschafer"
+        #    weight: -3
+        #    
+        #  [[menu.main]]
+        #    name: "Mastodon"
+        #    pre: "<i class='fab fa-mastodon'></i>"
+        #    url: "https://mastodon.online/@bronxasaur"
+        #    post: "me"
+        #    weight: -2
+        #
+        #  [[menu.main]]
+        #    name: "Twitter"
+        #    pre: "<i class='fab fa-twitter'></i>"
+        #    url: "https://twitter.com/bronxasaur"
+        #    weight: -1
+        #
+        #  [[menu.main]]
+        #    name: "Portfolio"
+        #    pre: "<i class='fas fa-briefcase'></i>"
+        #    url: "https://bjschafer.com"
+        #    weight: 110
