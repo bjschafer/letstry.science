@@ -1,5 +1,6 @@
 ---
 title: "About"
+showDate: false
 draft: false
 toc: false
 ---

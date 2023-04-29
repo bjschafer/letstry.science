@@ -7,7 +7,6 @@ categories:
 tags:
   - k8s
   - dns
-  - k3s
 toc: false
 ---
 
