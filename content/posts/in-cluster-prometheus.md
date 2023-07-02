@@ -17,7 +17,7 @@ Thanks to my friend Justin, I was able to use a much more elegant solution.
 
 ### The basic way
 
-When deploying `kube-prometheus-stack`, define `additionalScrapeConfigs`. Since I deployed via the Helm chart, that would mean doing a `helm upgrade` each time I need ted to change things. Gross.
+When deploying `kube-prometheus-stack`, define `additionalScrapeConfigs`. Since I deployed via the Helm chart, that would mean doing a `helm upgrade` each time I needed to change things. Gross.
 
 ### The documented way
 
