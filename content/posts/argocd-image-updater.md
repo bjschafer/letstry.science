@@ -12,7 +12,7 @@ tags:
 images automatically in your Kubernetes cluster based on a set of rules. Its primary limitation is it requires you use either Helm
 or Kustomize to deploy your application, as it uses properties of those tools to update the image.
 
-But, since Kustomize is so lightweight, it's actually straightforward to (ab)use it to make ArgoCD Image Updater work for you.
+But since Kustomize is so lightweight, it's actually straightforward to (ab)use it to make ArgoCD Image Updater work for you.
 
 # Why?
 
@@ -62,7 +62,7 @@ spec: # omitted for brevity, no changes required
 ```
 
 At a minimum, the first two annotations _must_ be configured. The first lists any and all images in this app you want Image Updater to
-check on. The second say to look for the latest digest on the given tag, and use that to enforce updates. This way, tags that
+check on. The second says to look for the latest digest on the given tag, and use that to enforce updates. This way, tags that
 are continually pushed to will be updated whenever they change.
 
 The latter two are for the [`git` write-back method](https://argocd-image-updater.readthedocs.io/en/stable/basics/update-methods/#git-write-back-method),
