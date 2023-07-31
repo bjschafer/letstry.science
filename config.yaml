@@ -4,6 +4,10 @@ title: "Snippets of Nifty"
 copyright: "Copyright © 2019-2023, Braxton Schafer"
 theme: ["gitlab.com/gabmus/hugo-ficurinia"]
 
+security:
+  gotemplates:
+    allowActionJSTmpl: true # TODO fix
+
 permalinks:
   posts: /:year/:month/:slug/
   page: /:slug/
