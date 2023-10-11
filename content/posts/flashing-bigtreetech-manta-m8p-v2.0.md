@@ -50,9 +50,11 @@ On both the M8P and the EBB2209, terminal-ness is configured by shorting the `12
 
 Since in a printer, there are exactly two devices, both must have the 120R jumper set at all times.
 
+Also, don't forget to configure the `can0` network interface (`/etc/network/interfaces.d/can0`) with the same bus speed/bitrate you set when building below.
+
 ### Building and flashing
 
-On the M8P, you need to configure both Klipper and [Katapult](https://github.com/Arksine/katapult) (né CanBoot). On BTT linux, you'll need to clone Katapult yourself into `$HOME`.
+On the M8P, you need to configure both Klipper and [Katapult](https://github.com/Arksine/katapult) (né CanBoot). On BTT Linux, you'll need to clone Katapult yourself into `$HOME`.
 
 #### Katapult
 
@@ -81,8 +83,6 @@ Now, for Klipper, run `make menuconfig` and set the following options:
 - CAN bus speed: **1000000** (pick a number, and use it everywhere).
 
 Build it with `make`.
-
-![[Pasted image 20231007195703.png]]
 
 #### Flashing
 
