@@ -12,7 +12,8 @@ summary: How to get a DSI display (ribbon cable) display to work with a Raspberr
 To get a DSI (aka Raspberry Pi ribbon) display to work on a Manta M8P (v2.0 in my case), the steps were a little unclear.
 
 I'm using [this display](https://www.fabreeko.com/products/raspberry-pi-5-inch-touch-screen-ips-800x480-by-fysetc?_pos=8&_sid=876c0bda2&_ss=r) by Fysetc, which seems to maybe not really exist.
-I spent way too long trying to find info on it, but was barking up the wrong tree.
+I spent way too long trying to find info on it, but was barking up the wrong tree. If you've
+got it connected but are just getting a white screen on a CM4-like device, this guide is for you.
 
 The product page notes that you need to remove or comment out the following line from `/boot/config.txt` on your Pi:
 
