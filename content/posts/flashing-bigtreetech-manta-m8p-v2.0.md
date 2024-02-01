@@ -2,9 +2,8 @@
 title: "Flashing BigTreeTech Manta M8P V2.0"
 date: 2023-10-10T11:22:07-05:00
 draft: false
-categories:
-    - 3D Printing
 tags:
+    - 3d-printing
     - klipper
     - voron
     - trident

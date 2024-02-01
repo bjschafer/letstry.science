@@ -2,9 +2,8 @@
 title: "DSI Display on a Manta M8P"
 date: 2023-12-14T17:24:19-06:00
 draft: false
-categories:
-    - 3D Printing
 tags:
+    - 3d-printing
     - trident
 summary: How to get a DSI display (ribbon cable) display to work with a Raspberry Pi compute module on a Manta M8P.
 ---
