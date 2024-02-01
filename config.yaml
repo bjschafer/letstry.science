@@ -21,8 +21,19 @@ params:
   paperCards: true
   buttonTags: true
   bigArticleTitle: true
+  gridView: true
+  navtype: "circles"
+  menuStyle: "buttons"
+  inputStyle: buttons
+  showPostsLink: false
 
   enableShareOnFediverse: true
+
+  faviconIco: "/favicon.ico"
+  favicon: "/favicon.png"
+  logo: "/logo.png"
+  appletouch: "/apple-touch-icon.png"
+  icon512: "/icon512.png"
 
 menu:
   main:
@@ -42,6 +53,10 @@ menu:
     - identifier: github
       name: GitHub
       url: https://github.com/bjschafer
+      weight: -4
+    - identifier: linkedin
+      name: LinkedIn
+      url: https://linkedin.com/in/bjschafer
       weight: -3
     - identifier: mastodon
       name: Mastodon
