@@ -36,7 +36,7 @@ The [Manta M8P manual](https://github.com/bigtreetech/Manta-M8P/blob/master/V2.0
 
 It's not entirely right, but led me down the correct path. With that tidbit of info, I
 found [this official doc](https://github.com/raspberrypi/documentation/blob/develop/documentation/asciidoc/computers/compute-module/cmio-display.adoc#quickstart-guide-display-only)
-from Raspbery Pi, discussing how to get DSI displays working on computer module boards (which the M8P is, at its core).
+from Raspbery Pi, discussing how to get DSI displays working on compute module boards (which the M8P is, at its core).
 
 It offers a command we can run:
 
