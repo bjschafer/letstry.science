@@ -1,7 +1,7 @@
 baseURL: "https://letstry.science"
 languageCode: "en-us"
 title: "Snippets of Nifty"
-copyright: "Copyright © 2019-2023, Braxton Schafer"
+copyright: "Copyright © 2019-2024, Braxton Schafer"
 theme: ["gitlab.com/gabmus/hugo-ficurinia"]
 
 security:
