@@ -39,7 +39,7 @@ menu:
   main:
     - identifier: about
       name: About
-      url: /about/
+      url: /about/me
       weight: -6
     - identifier: portfolio
       name: Portfolio
@@ -65,8 +65,9 @@ menu:
     - identifier: twitter
       name: Twitter
       url: https://twitter.com/bronxasaur
-      weight: -1
-    
+      weight:
+        -1
+
         #[menu]
         #
         #
@@ -75,7 +76,7 @@ menu:
         #    pre: "<i class='fab fa-github'></i>"
         #    url: "https://github.com/bjschafer"
         #    weight: -3
-        #    
+        #
         #  [[menu.main]]
         #    name: "Mastodon"
         #    pre: "<i class='fab fa-mastodon'></i>"
