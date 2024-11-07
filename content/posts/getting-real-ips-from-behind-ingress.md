@@ -3,6 +3,7 @@ title: "Getting real IPs from behind ingress"
 date: 2023-07-30T20:50:31-05:00
 draft: false
 summary: A whirlwind dive into kube LoadBalancer services, and a lesson in how things are not always what they seem.
+aliases: ['/2023/07/getting-real-posts-from-behind-ingress'] # ha, i know
 tags:
     - k8s
     - networking
