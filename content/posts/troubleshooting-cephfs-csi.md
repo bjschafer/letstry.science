@@ -87,7 +87,7 @@ Remove all `mountOptions` from your CephFS StorageClass, and update your existin
 ```bash
 #!/bin/bash
 
-# Get a list of PVs with the csi-cephfs-sc saorage class. Adjust to your needs.
+# Get a list of PVs with the csi-cephfs-sc storage class. Adjust to your needs.
 PVs=$(kubectl get pv -o=jsonpath='{.items[?(@.spec.storageClassName=="csi-cephfs-sc")].metadata.name}')
 
 for pv in $PVs; do
