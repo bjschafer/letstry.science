@@ -82,7 +82,7 @@ announce that only from nodes running ingress pods.
 ## kube-vip fights back
 
 It turns out, [functionality to handle just that](https://kube-vip.io/docs/usage/kubernetes-services/#external-traffic-policy-kube-vip-v050)
-was semi-recently added to kube-vip. So I set out to enable it. And...it seemed work. Except it was still announcing the new ingress
+was semi-recently added to kube-vip. So I set out to enable it. And...it seemed to work. Except it was still announcing the new ingress
 service IP from all nodes.
 
 Not only that, but I ran into [this bug](https://github.com/kube-vip/kube-vip/issues/530) which caused the control-plane IP to now
