@@ -13,6 +13,8 @@ Fast Facts™:
   - [Caspar](../pets/caspar)
   - [Arya](../pets/arya)
   - [Salem](../pets/salem)
+  - [Frank](../pets/frank) (Bonus!)
+  - [Eevee](../pets/eevee) (Bonus...)
 - Hobbies:
   - [3D Printing](../../tags/3d-printing)
   - FOSS ([Linux](../../tags/linux), [k8s](../../tags/k8s), etc)
