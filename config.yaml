@@ -1,7 +1,7 @@
 baseURL: "https://letstry.science"
 languageCode: "en-us"
 title: "Snippets of Nifty"
-copyright: "Copyright © 2019-2024, Braxton Schafer"
+copyright: "Copyright © 2019-2025, Braxton Schafer"
 theme: ["gitlab.com/gabmus/hugo-ficurinia"]
 
 security:
@@ -50,6 +50,10 @@ menu:
     #      name: BlueSky
     #      url: https://bsky.app/profile/whizkid.dev
     #      weight: -4
+    - identifier: gnome
+      name: BlueSky
+      url: https://bsky.app/profile/whizkid.dev
+      weight: -5
     - identifier: github
       name: GitHub
       url: https://github.com/bjschafer
@@ -61,12 +65,8 @@ menu:
     - identifier: mastodon
       name: Mastodon
       url: https://mastodon.online/@bronxasaur
-      weight: -2
-    - identifier: twitter
-      name: Twitter
-      url: https://twitter.com/bronxasaur
       weight:
-        -1
+        -2
 
         #[menu]
         #
