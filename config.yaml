@@ -2,7 +2,7 @@ baseURL: "https://letstry.science"
 languageCode: "en-us"
 title: "Snippets of Nifty"
 copyright: "Copyright © 2019-2025, Braxton Schafer"
-theme: ["gitlab.com/gabmus/hugo-ficurinia"]
+theme: ["github.com/athul/archie"]
 
 security:
   gotemplates:
@@ -34,6 +34,8 @@ params:
   logo: "/logo.png"
   appletouch: "/apple-touch-icon.png"
   icon512: "/icon512.png"
+
+  mode: toggle
 
 menu:
   main:

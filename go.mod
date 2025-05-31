@@ -2,4 +2,6 @@ module github.com/bjschafer/letstry.science
 
 go 1.20
 
-require gitlab.com/gabmus/hugo-ficurinia v0.0.0-20250427183130-769f01ad4363 // indirect
+require (
+	github.com/athul/archie v0.0.0-20250203032547-f2f74a5d9c04 // indirect
+)
