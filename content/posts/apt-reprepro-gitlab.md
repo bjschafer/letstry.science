@@ -481,3 +481,11 @@ nfpm-publish-deb:
 
 ...and boom, you have automated multi-arch multi-distribution builds that get published to your own internal
 apt repo. Enjoy and good luck!
+
+## Alternate option
+
+I ran into issues with `parallel.matrix` and simultaneous uploads failing because the reprepro database was locked.
+
+I could've fixed this with a little random wait, but there's no engineering like over-engineering!
+
+So I wrote [reprepro-api](https://github.com/bjschafer/reprepro-api). Directions are in the readme.
