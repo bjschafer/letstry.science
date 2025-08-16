@@ -273,7 +273,7 @@ Put the *public* key in `~repo/.ssh/authorized_keys`. Make sure it's owned by `r
 Take the *private* key and create a GitLab CI variable of type **File**, and name it `APT_SSH_PRIVATE_KEY`.
 Make sure that there is an empty line at the bottom of the variable's contents.
 
-If you're looking to build from multiple places, I'd set the variable on a group level so that it can propogate
+If you're looking to build from multiple places, I'd set the variable on a group level so that it can propagate
 down to all child projects.
 
 ## Publishing template
