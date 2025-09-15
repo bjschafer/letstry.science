@@ -5,7 +5,7 @@ date:  2025-09-15
 ---
 
 I wanted to make a page I can quickly share to help explain what I have that affects what I can eat and do.
-Something that I can shore for those who want a bit more detail than the standard "well, it's complicated".
+Something that I can share for those who want a bit more detail than the standard "well, it's complicated".
 
 Why? In part to let others suffering from similar things know that they're not alone.
 
