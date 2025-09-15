@@ -13,7 +13,6 @@ tags = [
   "homelab",
   "gitlab",
   "debian",
-  "homelab",
 ]
 +++
 
