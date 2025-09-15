@@ -1,8 +1,9 @@
 ---
 title: "It's Complicated™; or, what is wrong with me"
 template: "info-page.html"
-date:  2025-09-15
 ---
+
+**Last updated**: 2025-09-15 
 
 I wanted to make a page I can quickly share to help explain what I have that affects what I can eat and do.
 Something that I can share for those who want a bit more detail than the standard "well, it's complicated".
