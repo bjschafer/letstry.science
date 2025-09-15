@@ -52,6 +52,7 @@ If you work with me, hang out with me, or otherwise have to be around me, you ma
 - frequent and/or long trips to the bathroom. I'll be okay, I'll text you if I need something, but some peace and privacy is appreciated.
 - arriving late. This is because of the above.
 - leaving early and/or suddenly. Sometimes if I get hit hard, I'm just going to be best off heading out. I promise I still like you and enjoyed spending time with you.
+- cancelling plans last minute, see above.
 - bad gas. I'm sorry, but it only can go one way, and it's painful.
 - dietary restrictions. Since *I* don't always know what's going to trigger my symptoms, I can't just tell you "here's what I can/can't have". The best things you can do are:
     - share a menu with me ahead of time. This lets me plan what I can eat.
