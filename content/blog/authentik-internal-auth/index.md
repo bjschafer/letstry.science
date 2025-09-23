@@ -27,7 +27,7 @@ handy with a password manager so what's one more password.
 One thing I wanted to do with Authentik is have it prompt for MFA credentials (Passkey or TOTP), but **only when accessed from the Internet**.
 In other words, if I'm sitting at home, I don't need to provide MFA creds when logging in, but I do if I'm out and about on my phone.
 
-I laid the groundwork for this in [Getting real IPs from behind ingress]({{< relref "/posts/getting-real-ips-from-behind-ingress" >}}).
+I laid the groundwork for this in [Getting real IPs from behind ingress](@blog/getting-real-ips-from-behind-ingress/index.md).
 After doing that, Authentik could see the real IP address of clients.
 
 # Implementation
