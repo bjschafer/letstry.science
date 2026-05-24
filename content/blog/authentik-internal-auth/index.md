@@ -15,6 +15,16 @@ tags = [
     ]
 +++
 
+{% admonition(type="info", title="Update 2026-05-24") %}
+When upgrading to Authentik 2026.05.0, I noticed this stopped working. To fix it, go to the **Stage Binding** you
+created, click **Edit** on the `default-authentication-mfa-validation` row and change **Policy engine mode** from
+**Any** to **All**.
+
+Authentik seems to have added a second built-in policy on this stage to support passkeys. When using **Any**, that policy
+suffices the check for password logins, so `Is Internal` is irrelevant. By setting **All**, both the passkey policy and
+our `Is Internal` policy must both pass to skip MFA.
+{% end %}
+
 # Introduction
 
 I run [Authentik](https://goauthentik.io) in my homelab for SSO. It's actually super handy to have one set of credentials that can be
@@ -30,7 +40,7 @@ In other words, if I'm sitting at home, I don't need to provide MFA creds when l
 I laid the groundwork for this in [Getting real IPs from behind ingress](@/blog/getting-real-ips-from-behind-ingress/index.md).
 After doing that, Authentik could see the real IP address of clients.
 
-# Implementation
+## Implementation
 
 ## Policy
 
@@ -73,5 +83,5 @@ we created in the previous section. Check **Negate result**[^1], and hit **Creat
 Now, go test it out! You should be able to log in from an incognito window on a machine in your internal network without getting prompted
 for MFA, but you should be prompted if you, say, disconnect your phone from wifi and login using mobile data.
 
-[^1]: We negate the result because we want the policy check to return true (and thus cause the stage to run) 
+[^1]: We negate the result because we want the policy check to return true (and thus cause the stage to run)
 if the client IP is *not* internal.
