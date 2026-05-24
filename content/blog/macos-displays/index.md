@@ -23,10 +23,10 @@ While the debugging journey was done with the help of Claude, the
 entirety of this post is all slop from my human brain.
 {% end %}
 
-For work, I've found that the nicest main monitor setup is actually just a cheap ~40" 4K TV. If you look
+For work, I've found that the nicest main monitor setup is actually just a cheap ~40″ 4K TV. If you look
 around a bit, you can usually find one for around $200, and 4K is 4K. I don't care about its smart features,
 or its speakers, or its refresh rate (60hz is plenty for coding). I've been running on that setup for a number
-of years now, augmented with a portrait-orientation secondary display (in this case, the 27" 4K monitor provided
+of years now, augmented with a portrait-orientation secondary display (in this case, the 27″ 4K monitor provided
 by my job).
 
 When I was at a Windows shop previously, I had no issues with the 4K TV approach. It looked crystal clear, and I just
@@ -119,8 +119,8 @@ display size located at `0x15` and `0x16` (in cm[^3]) with:
 base64 -d <<< "$EDID" | xxd -s 21 -l 2 -g 1
 ```
 
-...which in our case shows 160 cm x 90 cm. Mathing that you'll find that it's reporting as a 72.3" TV with a PPI of 61.
-My 40" TV's firmware thinks it's 72". I guess everyone lies about size.
+...which in our case shows 160 cm x 90 cm. Mathing that you'll find that it's reporting as a 72.3″ TV with a PPI of 61.
+My 40″ TV's firmware thinks it's 72″. I guess everyone lies about size.
 
 So, let's patch it! BetterDisplay lets you override the EDID, so I did, setting the values at `0x15` and `0x16`
 to `2c 19`, (44 x 25 cm) recalculating the checksum as I did so.
