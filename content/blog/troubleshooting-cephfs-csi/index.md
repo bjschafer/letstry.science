@@ -99,7 +99,7 @@ for pv in $PVs; do
 done
 ```
 
-[Source](https://github.com/ceph/ceph-csi/issues/3927#issuecomment-1667294477)
+[Source](https://github.com/ceph/ceph-csi/issues/3927)
 
 
 # Summary

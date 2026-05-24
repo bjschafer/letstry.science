@@ -23,7 +23,7 @@ PS2 didn't properly fit in any of the cubbies, and I designed the stand in _2018
 
 ## Design
 
-[Fusion model](https://a360.co/3Kh4pLf)
+[Fusion model](https://web.archive.org/web/20240817022545/https://myhub.autodesk360.com/ue2d85cfa/shares/public/SH512d4QTec90decfa6ea095bf42baa5fd70)
 
 I suck at visualizing things, so step one was for me to design a 3D model. I spent a lot of time iterating on this design and incorporating
 feedback from my wife, housemate, dad, and anyone who could spare a few cycles.
@@ -103,7 +103,7 @@ to put edge banding on the sides of the plywood, but was overruled. It turned ou
 
 ## Shelf pegs
 
-My initial plan was to use [this 3D printed jig](https://www.thingiverse.com/thing:4286575) for making the shelf pin holes, along with a borrowed drill press.
+My initial plan was to use [this 3D printed jig](https://web.archive.org/web/20241208023906/https://www.thingiverse.com/thing:4286575) for making the shelf pin holes, along with a borrowed drill press.
 I quickly discovered that, while this design would be perfect for an ad-hoc shelf or two, there was no way it was going to hold up to all the holes I needed drilled.
 
 I went to the hardware store looking for the Kreg-branded jig, figuring it'd be a little pricey but I'd at least get solid results. They didn't carry it, so I

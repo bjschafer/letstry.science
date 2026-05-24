@@ -12,7 +12,7 @@ tags = [
 
 To get a DSI (aka Raspberry Pi ribbon) display to work on a Manta M8P (v2.0 in my case), the steps were a little unclear.
 
-I'm using [this display](https://www.fabreeko.com/products/raspberry-pi-5-inch-touch-screen-ips-800x480-by-fysetc?_pos=8&_sid=876c0bda2&_ss=r) by Fysetc, which seems to maybe not really exist.
+I'm using [this display](https://web.archive.org/web/20240615062835/https://www.fabreeko.com/products/raspberry-pi-5-inch-touch-screen-ips-800x480-by-fysetc) by Fysetc, which seems to maybe not really exist.
 I spent way too long trying to find info on it, but was barking up the wrong tree. If you've
 got it connected but are just getting a white screen on a CM4-like device, this guide is for you.
 
@@ -36,7 +36,7 @@ The [Manta M8P manual](https://github.com/bigtreetech/Manta-M8P/blob/master/V2.0
 > downloaded /boot/dt-blob.bin driver and restart, then HDMI can output normal
 
 It's not entirely right, but led me down the correct path. With that tidbit of info, I
-found [this official doc](https://github.com/raspberrypi/documentation/blob/develop/documentation/asciidoc/computers/compute-module/cmio-display.adoc#quickstart-guide-display-only)
+found [this official doc](https://web.archive.org/web/20241109232753/https://github.com/raspberrypi/documentation/blob/develop/documentation/asciidoc/computers/compute-module/cmio-display.adoc)
 from Raspbery Pi, discussing how to get DSI displays working on compute module boards (which the M8P is, at its core).
 
 It offers a command we can run:

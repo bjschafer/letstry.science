@@ -119,7 +119,7 @@ services. But those with reading comprehension better than mine probably noticed
 > They both use the Cluster external traffic policy, **or they both point to the exact same set of pods** (i.e. the pod selectors are identical).
 
 You see, dear reader, that was not to be. So now what? Well, it turns out that the cause of, and solution to, all of life's problems is
-indeed ingress. Traefik is [perfectly happy](https://doc.traefik.io/traefik/routing/providers/kubernetes-crd/#kind-ingressroutetcp) to
+indeed ingress. Traefik is [perfectly happy](https://doc.traefik.io/traefik/reference/routing-configuration/kubernetes/crd/tcp/ingressroutetcp/) to
 do straight TCP routing if you tell it to do so. Since I knew I only needed one thing to listen on port 22, I didn't have to deal with
 TCP termination, it could just straight route it back to Gitea.
 

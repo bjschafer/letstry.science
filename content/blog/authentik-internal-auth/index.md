@@ -59,7 +59,7 @@ internal_nets = [
 return any([ak_client_ip in ip_network(net) for net in internal_nets])
 ```
 
-`ak_client_ip` is a [policy variable](https://version-2024-10.goauthentik.io/docs/customize/policies/expression?utm_source=authentik#variables)
+`ak_client_ip` is a [policy variable](https://goauthentik.io/docs/customize/policies/types/expression/)
 populated by Authentik that returns the client's real IP address. If for some reason it can't determine the client's IP, it returns
 `255.255.255.255`.
 

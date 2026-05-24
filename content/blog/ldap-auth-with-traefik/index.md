@@ -110,7 +110,7 @@ Assuming you kept the Authelia container's name as `authelia`, you should only n
 
 ## Ngnix config
 
-Again, this is only relevant if you're doing the weird thing I'm doing. Setting up Authelia to work with Nginx is outside the scope of this post (although you may find [this documentation](https://github.com/authelia/authelia/blob/master/docs/proxies/nginx.md) to be useful).
+Again, this is only relevant if you're doing the weird thing I'm doing. Setting up Authelia to work with Nginx is outside the scope of this post (although you may find [this documentation](https://github.com/authelia/authelia/blob/master/docs/content/integration/proxies/nginx.md) to be useful).
 
 All you'll want to do is set up a snippet (mine go in `/etc/nginx/snippets`), call it `proxy.conf`. Its contents should look like this:
 
