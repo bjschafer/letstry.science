@@ -1,6 +1,7 @@
 +++
 title = "Authentik with Source IP Auth Modifications"
-date = 2024-11-06T19:57:10-06:00
+date = 2024-11-06
+updated = 2026-05-24
 
 description = """\
     How to configure an Authentik flow to conditionally execute stages based on client IP address. \
