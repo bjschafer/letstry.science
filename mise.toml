@@ -1,0 +1,14 @@
+[tools]
+zola = "0.22"
+
+[tasks.serve]
+description = "Run development server"
+run = "zola serve"
+
+[tasks.check]
+description = "Check site without building"
+run = "zola check"
+
+[tasks.build]
+description = "Compile static site"
+run = "zola build"
