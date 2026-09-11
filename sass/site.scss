@@ -1,0 +1,43 @@
+// Site-specific styles: CSS-only lightbox for the zoomable shortcode.
+
+.zoomable-toggle {
+    display: none;
+}
+
+.zoomable-thumb {
+    display: block;
+    cursor: zoom-in;
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.zoomable-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.85);
+    cursor: zoom-out;
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+.zoomable-toggle:checked ~ .zoomable-overlay {
+    display: flex;
+}
+
+// Prevent the page behind the overlay from scrolling while zoomed.
+body:has(.zoomable-toggle:checked) {
+    overflow: hidden;
+}

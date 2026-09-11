@@ -65,6 +65,9 @@ skip_anchor_prefixes = [
 
 [extra]
 
+# Site-wide extra CSS (compiled from sass/site.scss). Used by the zoomable shortcode.
+stylesheets = ["site.css"]
+
 skin = "evangelion"
 
 menu = [

@@ -1,0 +1,46 @@
+{#- CSS-only click-to-enlarge image (lightbox). -#}
+{#- Usage: {{ zoomable(src="img.png" alt="...") }} -#}
+{#- Optional: full_src="bigger.png" to load a different (full-size) image when zoomed, -#}
+{#- lazy_loading=true (default) to defer loading the zoomed image. -#}
+{%- set random_id = get_random(end=100000) -%}
+{%- set colocated_path = page.colocated_path | default(value="") -%}
+{%- set lazy_loading = lazy_loading | default(value=true) -%}
+{%- set full_src = full_src | default(value=src) -%}
+
+{#- Resolve displayed image (same logic as figure.html) -#}
+{%- if src is starting_with("http") or raw_path -%}
+    {%- set image_url = src -%}
+{%- else -%}
+    {%- set relative_path = colocated_path ~ src -%}
+    {%- set meta = get_image_metadata(path=relative_path, allow_missing=true) -%}
+    {%- if not meta -%}
+        {%- set meta = get_image_metadata(path=src, allow_missing=true) -%}
+        {%- set image_url = get_url(path=src, cachebust=true) -%}
+    {%- else -%}
+        {%- set image_url = get_url(path=relative_path, cachebust=true) -%}
+    {%- endif -%}
+{%- endif -%}
+
+{#- Resolve enlarged image -#}
+{%- if full_src is starting_with("http") or raw_path -%}
+    {%- set full_image_url = full_src -%}
+{%- else -%}
+    {%- set full_relative_path = colocated_path ~ full_src -%}
+    {%- set full_meta = get_image_metadata(path=full_relative_path, allow_missing=true) -%}
+    {%- if not full_meta -%}
+        {%- set full_meta = get_image_metadata(path=full_src, allow_missing=true) -%}
+        {%- set full_image_url = get_url(path=full_src, cachebust=true) -%}
+    {%- else -%}
+        {%- set full_image_url = get_url(path=full_relative_path, cachebust=true) -%}
+    {%- endif -%}
+{%- endif -%}
+
+<div class="zoomable">
+    <input type="checkbox" id="zoom-{{ random_id }}" class="zoomable-toggle">
+    <label for="zoom-{{ random_id }}" class="zoomable-thumb" title="Click to enlarge">
+        <img src="{{ image_url }}"{% if alt %} alt="{{ alt }}"{% endif %}{% if meta.width %} width="{{ meta.width }}"{% endif %}{% if meta.height %} height="{{ meta.height }}"{% endif %}>
+    </label>
+    <label for="zoom-{{ random_id }}" class="zoomable-overlay" aria-hidden="true">
+        <img src="{{ full_image_url }}" loading="lazy"{% if alt %} alt="{{ alt }}"{% endif %}>
+    </label>
+</div>
