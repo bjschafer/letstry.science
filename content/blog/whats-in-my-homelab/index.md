@@ -1,6 +1,7 @@
 +++
 title = "What's in my homelab?"
 date = 2026-06-03
+updated = 2026-09-10
 
 description = """\
     A tour of what I run in my homelab and how. Hardware, software,
