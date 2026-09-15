@@ -18,10 +18,10 @@ katex = true
 
 ## Introduction
 
-{% admonition(type="note") %}
+{% <admonition type="note"> %}
 While the debugging journey was done with the help of Claude, the
 entirety of this post is all slop from my human brain.
-{% end %}
+{% </admonition> %}
 
 For work, I've found that the nicest main monitor setup is actually just a cheap ~40″ 4K TV. If you look
 around a bit, you can usually find one for around $200, and 4K is 4K. I don't care about its smart features,
@@ -48,10 +48,10 @@ With Retina displays, macOS instead does something a bit funky. Basically, it'll
 is actually a 1080p display, render it accordingly, and then it can use four full display pixels[^1] to render one
 "screen" pixel. This is what HiDPI mode means in macOS, and understanding this would've saved me a lot of headache.
 
-{% admonition(type="info", title="Key takeaway") %}
+{% <admonition type="info" title="Key takeaway"> %}
 If you learn nothing else from this blogpost, just remember this is how HiDPI rendering
 is done in macOS.
-{% end %}
+{% </admonition> %}
 
 Apple decides for you if a display can support HiDPI based on its reported size and resolution. It uses these to
 calculate the display's pixel density, represented in pixels per inch (PPI)[^2]. If a display's pixel density

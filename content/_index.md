@@ -1,5 +1,5 @@
 +++
-#title = "Home"
+title = "Home"
 
 [extra]
 section_path = "blog/_index.md"

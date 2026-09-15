@@ -17,14 +17,14 @@ tags = [
 I get asked a surprising amount about what I've got in my homelab, how I'm running it, what it looks like,
 and so on. I thought it might be fun to write it up!
 
-{{ toc() }}
+{{< toc />}}
 
 ## Hardware
 
 I run my homelab out of a 4-post fully enclosed cabinet/rack. Everything is either rackmount
 or lives on a rack shelf.
 
-{{ figure(src="full-rack.jpg" alt="Picture of the front of the aforementioned rack, in a messy utility room.")}}
+{{< figure src="full-rack.jpg" alt="Picture of the front of the aforementioned rack, in a messy utility room." />}}
 
 ### Cooling
 
@@ -115,7 +115,7 @@ out of spare parts.
 Proxmox also makes it easy to set up a Ceph cluster, which I've done from a pile of used enterprise 10k hard drives spread
 betwixt my three hosts. This provides block storage for all[^1] of my VMs as well as persistent storage for Kubernetes.
 
-{{ zoomable(src="proxmox-dashboard.png" alt="A screenshot from the Proxmox dashboard showing three hosts, 12 running VMs, 2 running LXC containers, Ceph, and not a wild amount of resource utilization.")}}
+{{< zoomable src="proxmox-dashboard.png" alt="A screenshot from the Proxmox dashboard showing three hosts, 12 running VMs, 2 running LXC containers, Ceph, and not a wild amount of resource utilization." />}}
 
 ### Kubernetes
 

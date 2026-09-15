@@ -16,7 +16,7 @@ tags = [
     ]
 +++
 
-{% admonition(type="info", title="Update 2026-05-24") %}
+{% <admonition type="info" title="Update 2026-05-24"> %}
 When upgrading to Authentik 2026.05.0, I noticed this stopped working. To fix it, go to the **Stage Binding** you
 created, click **Edit** on the `default-authentication-mfa-validation` row and change **Policy engine mode** from
 **Any** to **All**.
@@ -24,7 +24,7 @@ created, click **Edit** on the `default-authentication-mfa-validation` row and c
 Authentik seems to have added a second built-in policy on this stage to support passkeys. When using **Any**, that policy
 suffices the check for password logins, so `Is Internal` is irrelevant. By setting **All**, both the passkey policy and
 our `Is Internal` policy must both pass to skip MFA.
-{% end %}
+{% </admonition> %}
 
 # Introduction
 

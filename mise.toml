@@ -1,5 +1,5 @@
 [tools]
-zola = "0.22"
+zola = "0.23"
 
 [tasks.serve]
 description = "Run development server"

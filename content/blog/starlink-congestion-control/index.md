@@ -20,10 +20,10 @@ katex = true
 
 ## Introduction
 
-{% admonition(type="note") %}
+{% <admonition type="note"> %}
 While I had some AI help tracking this down, the
 entirety of this post is all slop from my human brain.
-{% end %}
+{% </admonition> %}
 
 I run a Plex server at home. It's a fantastic way to manage and watch public-domain movies, and it even makes it nice
 and easy to share those public-domain movies with friends! I newly invited a friend to my Plex server because they wanted

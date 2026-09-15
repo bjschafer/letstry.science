@@ -52,6 +52,7 @@ foowho.cmdcentral.xyz   ssl_cert_path=/etc/ssl/fullchain1.pem ssl_key_path=/etc/
 
 Then, here's the playbook. Note that if it fires the "Restart web servers" handler, it'll "error" on any web server that isn't running/doesn't exist. That's okay, though, as it'll still try and restart others, until it finds and restarts the one you want. Ansible experts, teach me how to do this better!
 
+{% raw %}
 ```yaml
 ---
 - hosts: wildcard_hosts
@@ -97,6 +98,7 @@ Then, here's the playbook. Note that if it fires the "Restart web servers" handl
       - lighttpd
     ignore_errors: yes
 ```
+{% endraw %}
 
 Finally, I set up a cronjob in my user's crontab (`crontab -e` as user) to run this playbook automatically, so hosts get the updated cert if it exists:
 

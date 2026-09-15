@@ -236,6 +236,7 @@ apt update
 
 If you want to automate it, here's an Ansible snippet to make your life easier:
 
+{% raw %}
 ```yaml
 - name: "[repo] install prereqs"
   ansible.builtin.package:
@@ -258,6 +259,7 @@ If you want to automate it, here's an Ansible snippet to make your life easier:
   when:
     - "ansible_os_family == 'Debian'"
 ```
+{% endraw %}
 
 # GitLab Setup
 

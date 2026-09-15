@@ -63,7 +63,7 @@ Then, looking through plywood, I also happened to find some nicely faced red oak
 While I was excited for this to be my first major project in my own shop, I knew there was _one_ cut that I couldn't safely and accurately make. So I took
 the 2x4s over to my dad's woodshop. I used his table saw to cut the 45° angle in the front legs and then set them aside for later.
 
-{{ figure(src="45-degree-cuts.jpg" alt="2x4s cut at a 45 degree angle") }}
+{{< figure src="45-degree-cuts.jpg" alt="2x4s cut at a 45 degree angle" />}}
 
 Next, I cut all the legs. I set a clamp on my new miter saw to the exact length I needed, and cut all 9 legs in one sitting to ensure that they all were the exact
 same length.
@@ -82,7 +82,7 @@ With everything measured and marked, I used the rip cut jig to cut the straight 
 Then, I very carefully -- and with room for error later -- dropped my circular saw in at the slanted line and free cut til I hit the straight-cut line.
 I cut the last little bit with a hand saw to avoid accidentally sawing into the workpiece.
 
-{{ figure(src="top-cut.jpg" alt="Rough-cut top piece" caption="Rough-cut top piece") }}
+{{< figure src="top-cut.jpg" alt="Rough-cut top piece" caption="Rough-cut top piece" />}}
 
 Then, I clamped a straightedge along the slanted chalk line, and got out my router with a flush cut bit. Following the straightedge, I got the slanted edge to
 where I wanted it. I finished up the corner with some sanding.
@@ -91,11 +91,11 @@ I repeated a similar process to get the top piece rough cut, and then routed it 
 
 Finally, I put a roundover on the top, and lightly rounded the corners by hand with a sanding block. My wife helped me finish sand the top and bottom.
 
-{{ figure(src="sanding-top.jpg" alt="Sanding the rounded-over top" caption="My lovely wife sanding the top with roundover already applied") }}
+{{< figure src="sanding-top.jpg" alt="Sanding the rounded-over top" caption="My lovely wife sanding the top with roundover already applied" />}}
 
 ## Color selection
 
-{{ figure(src="stain-colors.jpg" alt="Choosing stain colors" caption="Hurray for test pieces!") }}
+{{< figure src="stain-colors.jpg" alt="Choosing stain colors" caption="Hurray for test pieces!" />}}
 
 We all agreed that Cheetos™ was the wrong color, and immediately eliminated it. The outermost two coolrs were too light, and the middle mahogany was too dark.
 Et voila, we had our color chosen. We brought all the pieces out to the garage for better access to fresh air, and stained. I would like to note that I'd wanted
@@ -110,7 +110,7 @@ I went to the hardware store looking for the Kreg-branded jig, figuring it'd be 
 came home with an off-brand jig that used a spring-loaded drill bit holder to drill straight and shallow holes. It broke after about 5 holes. So I ordered
 the Kreg one off Amazon and was able to get it overnighted.
 
-{{ figure(src="shelf-peg-holes.jpg" alt="Kreg shelf peg jig in use" caption="Had to use a shim to keep it centered.") }}
+{{< figure src="shelf-peg-holes.jpg" alt="Kreg shelf peg jig in use" caption="Had to use a shim to keep it centered." />}}
 
 It worked...reasonably well, although clamping it was a challenge with the clamps I had. About half the time I ended up just carefully holding it while I drilled.
 
@@ -119,7 +119,7 @@ It worked...reasonably well, although clamping it was a challenge with the clamp
 With everything drilled and stained, it was time to assemble! I used pocket screws for everything except the 4x4 -- that I used 3-1/2" wood screws driven in from
 the top. Wanted a bit of extra certainty, and had some color-matched wood filler I needed an excuse to try out (it worked well).
 
-{{ figure(src="first-assembly.jpg" alt="Skeleton assembled!" caption="All put together!") }}
+{{< figure src="first-assembly.jpg" alt="Skeleton assembled!" caption="All put together!" />}}
 
 Always stressful putting it together and hoping that everything fits & you didn't mess anything up. I made judicious use of the framing square to ensure everything
 lined up and was, well, square.
@@ -128,7 +128,7 @@ With assembly out of the way, it was time to move it up for polyurethane.
 
 ...um...about that.
 
-{{ figure(src="oops.jpg" alt="It doesn't fit." caption="I didn't measure *everything*") }}
+{{< figure src="oops.jpg" alt="It doesn't fit." caption="I didn't measure *everything*" />}}
 
 Yeah, I couldn't get it out of my shop. Back apart it came.
 
@@ -137,7 +137,7 @@ Yeah, I couldn't get it out of my shop. Back apart it came.
 I carefully took it apart, made sure to mark what went where, and reassembled it in place upstairs. Now assembled, my wife was in charge of poly. I measured
 carefully for shelves.
 
-{{ figure(src="second-assembly.jpg" alt="Assembled, again!" caption="We've had first assembly, yes, but what about second assembly?") }}
+{{< figure src="second-assembly.jpg" alt="Assembled, again!" caption="We've had first assembly, yes, but what about second assembly?" />}}
 
 ## Shelves
 
@@ -145,7 +145,7 @@ The side shelves were fairly straightforward -- they're just rectangles, and all
 
 The center shelves, however, were going to be more complicated. So I started in easy mode, with some cardboard:
 
-{{ figure(src="shelf-template.jpg" alt="A cardboard template") }}
+{{< figure src="shelf-template.jpg" alt="A cardboard template" />}}
 
 While not perfect, it let me validate my measurements, my plan, and then have a template to trace for the initial wooden shelf. I used the circular saw to
 get close on the angled pieces, and then used the flush-cut bit on my router with a straightedge to finish it up.
@@ -156,7 +156,7 @@ Finally, sand/stain/poly by my wonderful assistant-wife.
 
 ## Finished product
 
-{{ figure(src="final.jpg" alt="Finished corner entertainment center") }}
+{{< figure src="final.jpg" alt="Finished corner entertainment center" />}}
 
 There she is. A couple of things that aren't perfect that I'd adjust for next time:
 

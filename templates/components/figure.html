@@ -1,0 +1,34 @@
+{% component figure(src: string, @page = {}, alt = "", caption = "", link = "", target = "", rel = "", raw_path = false, lazy_loading = false) %}
+{%- set meta = {} -%}
+{#- Set paths based on whether the src is remote or local -#}
+{%- if src is starting_with(pat="http") or raw_path -%}
+    {%- set image_url = src -%}
+{%- else -%}
+    {%- set colocated_path = "" -%}
+    {%- if page and page.relative_path -%}
+        {%- set page_dirs = (page.relative_path | split(pat="/"))[:-1] -%}
+        {%- if page_dirs | length > 0 -%}
+            {%- set colocated_path = page_dirs | join(sep="/") ~ "/" -%}
+        {%- endif -%}
+    {%- endif -%}
+    {%- set relative_path = colocated_path ~ src -%}
+    {%- set meta = get_image_metadata(path=relative_path, allow_missing=true) -%}
+
+    {#- Fallback to absolute path if relative path doesn't work -#}
+    {%- if not meta -%}
+        {%- set meta = get_image_metadata(path=src, allow_missing=true) -%}
+        {%- set image_url = get_url(path=src, cachebust=true) -%}
+    {%- else -%}
+        {%- set image_url = get_url(path=relative_path, cachebust=true) -%}
+    {%- endif -%}
+{%- endif -%}
+
+{#- Component output is parsed as Markdown: emit one contiguous HTML block with no blank lines
+    so it isn't split into code blocks. -#}
+<figure>
+    {%- if link %}<a href="{{ link }}"{% if target %} target="{{ target }}"{% endif %}{% if rel %} rel="{{ rel }}"{% endif %}>{% endif -%}
+    <img src="{{ image_url }}"{% if alt %} alt="{{ alt }}"{% endif %}{% if meta.width %} width="{{ meta.width }}"{% endif %}{% if meta.height %} height="{{ meta.height }}"{% endif %}{% if lazy_loading %} loading="lazy"{% endif %}/>
+    {%- if link %}</a>{% endif -%}
+    {%- if caption %}<figcaption><h4>{{ caption }}</h4></figcaption>{% endif -%}
+</figure>
+{% endcomponent figure %}
