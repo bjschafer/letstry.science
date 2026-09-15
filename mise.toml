@@ -1,3 +1,12 @@
+# Single source of truth for the Zola version, locally and on Cloudflare Pages.
+# Pages build settings (dashboard, production + preview):
+#   UNSTABLE_PRE_BUILD: curl -fsSL https://mise.run | sh
+#                       && MISE_CEILING_PATHS="$HOME" "$HOME/.local/bin/mise" install -y
+#   Build command:      MISE_CEILING_PATHS="$HOME" "$HOME/.local/bin/mise" exec -- zola build ...
+# MISE_CEILING_PATHS is mandatory: the build image ships /opt/buildhome/.tool-versions
+# (go, hugo, node, python, ruby). Without the ceiling, mise walks up into $HOME, adopts
+# all of them, and the resulting api.github.com storm 403s on the shared build IP.
+# Bumping the pin below is all that is required; nothing to change in Cloudflare.
 [tools]
 zola = "0.23"
 
