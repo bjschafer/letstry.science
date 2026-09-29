@@ -67,3 +67,143 @@ For my three challenges, I built three pieces:
 1. Open ended tasks are called "Looks". They're time-bucketed to 15 minutes, and completing a task just asks you to write what you've learned. I can then automatically or manually take that look and turn it into more tasks if need be.
 2. A recurring review (1) pings me nightly to do it, and (2) pulls up things stuck on the backlog and asks me if they're still worth doing.
 3. The front screen lets you just type, and deal with cleaning it up separately.
+
+---
+
+## 🤖 AI-COLLATED NOTES — DELETE BEFORE PUBLISHING
+
+> **Everything from here to the end of the file is AI-written.** It's a collation of facts from the work vault to write from, not text for the post. Much of the vault's own documentation (gardener command, "Working the Vault", the reorg plan, template wording) was also agent-written, so quoting it directly would put AI text in the post too. Only headings, config values, and counts are verbatim. Employer, internal project/ticket names, internal URLs, and hosted-model names are left out. Topic indexes (MOCs) are infra-flavored, so they're called "topic indexes" here.
+
+### Before vs. after: numbers for a "why I rebuilt it" section
+
+From the reorg plan dated 2026-07-16, written as a vault survey:
+
+- In 2026 you wrote **70 dailies but touched only 15 content notes**. Dailies had become write-only.
+- **62 outbound wikilinks across 337 dailies.** The "refactor dailies into notes every morning" habit never actually ran.
+- One debugging investigation of about **1,900 lines lived in a single daily** with zero inbound links.
+- Of 155 content notes, **80% had no outbound links** and **48% were full orphans**.
+- **48% of notes had empty or missing tags**, written in three competing tag syntaxes.
+- Topics had 3 or more possible homes (one topic spanned 5 folders), plus junk drawers called `Other/` and `Reference/`. Every filing decision was a coin flip, so things stayed in the dailies.
+- The Home dashboard's "Active Projects" query matched 1 of 14 projects, and that one was a stale stub.
+- What already worked: the daily template (new on 2026-07-01), the task capture pipeline, and git auto-backup.
+
+Current state, counted 2026-09-29:
+
+- **387 dailies** since 2022-03-29.
+- **179 notes** in one flat `Notes/` folder.
+- **971 commits** in the vault's git history, starting 2022-11-09.
+- **50 dailies** carry a gardener digest, and there are **58 "promoted to" markers**. The weekly gardener reports 0 orphans.
+
+### Timeline
+
+- **2022-03:** first daily.
+- **2022-11:** vault goes into git.
+- **2026-07-01:** Morning plan / Wind-down daily template.
+- **2026-07-16:** reorg. Folders flattened, tags cut down, topic indexes built, orphans cleared, gardener built. The gardener ran propose-only for two supervised dry runs before it could write.
+- **2026-07-30:** gardener gets full autonomy to move notes out of dailies and create tasks.
+- **2026-08-17 to 08-31:** the daily's `## Notes` section becomes a "durable inbox". Anything written there gets rescanned until it's filed.
+
+### Daily note structure
+
+Headings, in order:
+
+1. **☕ Morning plan**
+    - Previous/next daily links.
+    - Checkboxes: run the Gardener (Stream Deck); yesterday's loose ends ("still worth doing?"); scan open tasks.
+    - **Today's focus** is a bare checkbox. It's deliberately *not* tracked as a task. It's a cue, not a duplicate task list.
+    - Embedded **Needs attention** view: anything due or scheduled today or earlier.
+    - Embedded **Pick up work** panel: active projects with their checkpoint and resume cue, plus notes linked from the last 7 dailies.
+2. **🌙 Wind-down:** "Wins / done", "Carrying over", "On my mind". Carryovers get *rescheduled* in place, never copied into the next daily.
+3. **🤖 Agent work log:** generated automatically, covered below.
+4. **Notes:** the durable inbox. Anything written here is guaranteed to get filed.
+5. **Scratch:** disposable. It's allowed to stay in the daily forever.
+6. **Tasks:** captured tasks land here.
+7. **🌱 Gardener** and **🌿 Weekly Gardener** digests get appended at the bottom.
+
+The written morning routine is "~1 minute": open the daily, press the button, set the focus.
+
+### Capture: "zero filing decisions"
+
+- **Knowledge:** a plain bullet under `## Notes`. It needs no title, tag or destination. "Never ask 'which folder?' at capture time."
+- **Tasks:** a Raycast script command called **Add Obsidian Task**. It lives in your personal `raycast-scripts` repo, written in TypeScript and run by Bun.
+    - Priority shorthand: `!` / `!!` / `!!!` / `~` become Tasks-plugin priority emoji.
+    - The date is a *separate* field, parsed by chrono-node (`tomorrow`, `friday`, `in 3 days`). Splitting it out means "debug friday incident" never turns into a Friday due date.
+    - The script appends `- [ ] TODO …` under today's `## Tasks`.
+- The Tasks plugin's **global filter is `TODO`**. Only lines containing `TODO` count as tasks. Morning checklists and design checklists stay out of the task views.
+
+### Task states
+
+Custom statuses, each with its own command and hotkey:
+
+- **Todo** `[ ]`: captured, not sorted yet.
+- **Next** `[+]`: chosen and ready. It doesn't need a deadline.
+- **Waiting** `[w]`: blocked on something named. The Scheduled date is the follow-up date.
+- **Later** `[L]`: worth keeping, but not a commitment.
+- Also **In Progress** `/`, **Cancelled** `-` and **Bookmark** `b`.
+
+Rules you set for yourself:
+
+- **Scheduled** means when to work on it. **Due** means a real deadline. No fake deadlines.
+- Status and date are decided *when choosing work*, not at capture.
+- Created, done and cancelled dates are stamped automatically.
+
+`Tasks.md` sections: Overdue, Today, This week, Upcoming, Next, Waiting, Later, Inbox, **Needs a decision**, Bookmarks, Done today. "Needs a decision" holds inbox items older than 14 days, "not expired commitments".
+
+### Projects
+
+- One rule for filing: an active or paused project goes in `Projects/<Project>/`, and everything else goes in `Notes/`. "When in doubt, `Notes/`."
+- Each project has one **hub note** with `status: active|paused` and `working: true|false`. `working: true` puts it on the daily's Pick up work panel.
+- Hub fields: `outcome::`, `checkpoint::`, `resume::` (the resume field is a "where was I" cue). Sections are Next (1–3 actions), Waiting, Later ("coarse checkpoints, not a second backlog"), Links and Documents.
+- Finished projects move to an archive folder.
+- **`/break-down`** is an agent command. You give it a brain dump and it saves a proposed outcome, checkpoint and up to 3 actions. It creates no real tasks until you approve them. It saves your raw dump verbatim first, so the only copy never lives in chat history.
+
+### The Gardener
+
+- **Trigger:** the Stream Deck button `🌱 Gardener`, placed under a "Daily Note" button. It opens a visible Terminal so you can watch it. The chain is button → `.command` launcher → shell script → an `opencode run` slash command. The physical button was chosen as the "existing dopamine path". A scheduled job was the alternative.
+- **One button runs three things:** the work log, the daily gardener, then the weekly gardener if the last weekly was 7 or more days ago. Folding the weekly in means there's nothing separate to remember.
+- **Daily steps:**
+    1. Move every `## Notes` capture into a real note. It uses Obsidian's own Note Composer and leaves `↪ promoted to [[Note]]` in the daily.
+    2. Sweep daily prose for "need to / don't forget / follow up" and turn it into real tasks.
+    3. Fix tag metadata.
+    4. File strays.
+    5. Link new notes from a topic index and flag orphans.
+    6. Task hygiene: projects with no next action, the same broad focus 3 times in 7 days, overdue waits, duplicate tasks.
+- **Output is a digest in today's daily.** "Done" is a receipt. "Review" holds **at most 5 decisions**, "not a generated task avalanche". You tick a line and type `next`, `waiting`, `later`, `pause`, `cancel` or similar, and the next run carries it out.
+- **Finding vs. deciding:** the agent finds stale things and carries out your answers. It never decides on its own whether a stale task or idle project still matters.
+- **No state file.** "Last run" is the newest daily that has a digest.
+- **Safety net:** Home has an "Unprocessed captures" view that lists anything still sitting under a daily's Notes, independent of the gardener.
+- **Weekly pass:** merges tags, re-sorts topic indexes (it flags one when it nears about 75 links), and finds archive candidates. Judgment calls show up as a `garden: …` line you approve by ticking.
+
+Bugs you hit, which could make good anecdotes:
+
+- **You answered "pause it" four days in a row and got asked again every day.** The fix was splitting "find" from "apply", and searching all dailies for past answers.
+- **The run window skipped part of each day.** Anything written after that morning's run was missed forever. It now includes the boundary day.
+- Moving notes started as copy-and-mark. It became a real move (cut plus link) so notes don't exist twice.
+
+### Agent work log
+
+- The same button first runs `/work-log`. It reads that day's coding-agent sessions from three tools and writes a short `🤖 Agent work log` into each past daily that lacks one.
+- It covers agent work only, so it doesn't replace your own "Wins / done". Meetings, reviews and chat never show up.
+
+### Plumbing
+
+- **Plugins:** Dataview, Tasks, Templater, Linter (enforces tag format on save), obsidian-git, Calendar, Advanced URI, Local REST API, Tag Wrangler, Iconize, Bases (`Browse.base` is a table-view index).
+- **Git:** auto-commits every 5 minutes and pushes every 6 hours. **Dailies are git-ignored**, so only filed notes are versioned.
+- Agents use the Obsidian CLI (`obsidian move`, `obsidian eval`) so wikilinks update when notes move.
+- There's a private folder that agents are told never to read.
+
+### Mapping to the 2020 post's wishlist
+
+- ✅ Notes and todos together, with inline metadata (Tasks-plugin emoji for dates and priority).
+- ✅ Plain text.
+- ✅ Git sync.
+- ✅ Tags, not categories.
+- ✅ CLI access.
+- ✅ Free-form structure.
+- ❌ **Mobile.** obsidian-git doesn't run on mobile. The reorg left a mobile/voice capture idea parked for exactly that reason.
+- The 2020 post ruled out Obsidian because it had "no task management". The Tasks plugin is what changed that.
+
+### Not covered
+
+- **The Stream Deck chat-minimize macro:** it isn't documented in the vault, so it's unconfirmed.
+- **The personal side** (the shared vault with your wife, "Looks", the nightly review): none of that is on the work machine.
