@@ -8,8 +8,6 @@ toc: true
 taxonomies:
     tags:
       - organization
-      - taskmanagement
-      - blog
       - rfc
 ---
 
@@ -111,6 +109,6 @@ I have looked at some of the other implementations of Org mode outside Emacs. Th
 
 I was using Vimwiki + Taskwiki to integrate Vim and Taskwarrior. I got off that boat eventually, though. Setting up your own Taskwarrior server in any sort of modern (read: containerized) platform is nigh on impossible. Plus, the integration was weird and buggy. Concealed metadata that you'd accidentally skip into in a motion; buffers getting de-synced from the task list. Nice in principal, but didn't work out.
 
-So then the thought came around to, "why don't I roll my own?" I know what I want, I could probably write it. Thing of it is, I'd likely as not end up reimplementing Org mode, a task tthat many programmers smarter than me seem to have tried and failed at.
+So then the thought came around to, "why don't I roll my own?" I know what I want, I could probably write it. Thing of it is, I'd likely as not end up reimplementing Org mode, a task that many programmers smarter than me seem to have tried and failed at.
 
 So thus, I find myself once again pining for a solution.
