@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Zola: Serve",
+    "command": "mise",
+    "args": ["run", "serve"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  {
+    "label": "Zola: Check",
+    "command": "mise",
+    "args": ["run", "check"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  {
+    "label": "Zola: Build",
+    "command": "mise",
+    "args": ["run", "build"],
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  }
+]
