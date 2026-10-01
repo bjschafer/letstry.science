@@ -90,7 +90,7 @@ fediverse_creator = { handle = "bronxasaur", domain = "mastodon.online" }
 # Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 copy_button = true
 
-favicon = "favicon.png"
+favicon = "favicon-v2.png"
 
 compact_tags = true
 tag_sorting = "frequency"

@@ -41,3 +41,34 @@
 body:has(.zoomable-toggle:checked) {
     overflow: hidden;
 }
+
+
+// Keep the approved logo geometry identical in both themes. Inversion raises
+// the plum lettering's contrast; rotating the hue restores the warm wood hue.
+.nav-title {
+    max-width: 100%;
+}
+
+.home-title.site-brand {
+    display: block;
+    width: 20rem;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.site-logo {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+[data-theme='dark'] .site-logo {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) .site-logo {
+        filter: invert(1) hue-rotate(180deg);
+    }
+}
