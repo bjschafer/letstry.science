@@ -12,7 +12,20 @@ zola = "0.23"
 
 [tasks.serve]
 description = "Run development server"
-run = "zola serve"
+usage = '''
+flag "--drafts" help="Include drafts when loading the site" negate="--no-drafts" default=#true
+flag "--open" help="Open site in the default browser" negate="--no-open" default=#true
+'''
+run = '''
+args=()
+if [ "${usage_drafts:-false}" = "true" ]; then
+  args+=(--drafts)
+fi
+if [ "${usage_open:-false}" = "true" ]; then
+  args+=(--open)
+fi
+zola serve "${args[@]}"
+'''
 
 [tasks.check]
 description = "Check site without building"
