@@ -3,12 +3,12 @@ title: "Frank"
 template: "info-page.html"
 ---
 
-Frank (b. Halloween 2015) (Franklin Anderson Floofington, FinkFink, Finkelgruber) is a grey tabby cat
+Frank (b. Halloween 2015 - 22 October 2026) (Franklin Anderson Floofington, FinkFink, Finkelgruber) was a grey tabby cat
 with a grumpy looking face (we call it Resting Frank Face).
-He's a real sweetie who's scared of everything and has had to learn how to cat. He enjoys playing by himself while
+He was a real sweetie who was scared of everything and had to learn how to cat. He enjoyed playing by himself while
 meowing loudly, trying to bathe the other cats (who apart from Salem don't tolerate it), and cuddles.
 
-Frank is a bonus cat, he belongs to our housemate.
+Frank was a bonus cat, he belonged to our housemate.
 
 {{< figure src="sleeping.jpg" alt="Sleeping on our bed, stretched out" caption="He's a sleepy boi." />}}
 {{< figure src="moving.jpg" alt="Caught walking around, RFF on full display" caption="He does things other than sleep!" />}}

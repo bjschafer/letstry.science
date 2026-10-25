@@ -4,13 +4,14 @@ template = "info-page.html"
 +++
 
 Fast Facts™:
+
 - Name: Braxton Schafer
 - Status: Happily married :)
 - Pets:
   - [Caspar](./pets/caspar)
   - [Arya](./pets/arya)
   - [Salem](./pets/salem)
-  - [Frank](./pets/frank) (Bonus!)
+  - [the late Frank](./pets/frank) (Bonus!)
   - [Eevee](./pets/eevee) (Bonus...)
 - Hobbies:
   - [3D Printing](../../tags/3d-printing)
