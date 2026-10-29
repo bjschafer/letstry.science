@@ -124,11 +124,11 @@ my K8S nodes as VMs. Then, instead of having a house full of pets I have a barn 
 
 I run [k3s](https://k3s.io) as a pretty lightweight means of running and managing K8S. It's just on stock Debian like everything
 else I run. Persistent storage is available via both Ceph RBD for block storage and CephFS for sharable storage. L3 ingress is
-provided by MetalLB (and sort of kube-vip, see [this post](../getting-real-ips-from-behind-ingress/index.md) for why) talking
+provided by MetalLB (and sort of kube-vip, see [this post](../getting-real-ips-from-behind-ingress/) for why) talking
 BGP to my UDM.
 
 Everything in K8S is managed via [cdk8s](https://cdk8s.io) and [ArgoCD](https://argo-cd.readthedocs.io/). My [generators repo](https://github.com/bjschafer/k8s-generators/) is public on GitHub and pretty active. I've spent a lot of time recently
-automating updates via Renovate. I also have ArgoCD Image Updater (see [this post](../argocd-image-updater/index.md) for more
+automating updates via Renovate. I also have ArgoCD Image Updater (see [this post](../argocd-image-updater/) for more
 on how I set that up in a not-sucky way, along with [lib/argo.ts](https://github.com/bjschafer/k8s-generators/blob/main/lib/argo.ts) for how I use it) running to update the straightforward things that a normal person would just set to `:latest`. Renovate
 helps me out by keeping the cdk8s tooling up to date, as well as things like CRDs, JSON schemas that get turned into TypeScript types for use in Helm values files, and also creates manual MRs when a new k3s version is released so I don't have to keep
 watching for new releases.
