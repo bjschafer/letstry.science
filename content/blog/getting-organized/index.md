@@ -87,12 +87,13 @@ From the reorg plan dated 2026-07-16, written as a vault survey:
 - The Home dashboard's "Active Projects" query matched 1 of 14 projects, and that one was a stale stub.
 - What already worked: the daily template (new on 2026-07-01), the task capture pipeline, and git auto-backup.
 
-Current state, counted 2026-09-29:
+Current state, recounted 2026-11-25:
 
-- **387 dailies** since 2022-03-29.
-- **179 notes** in one flat `Notes/` folder.
-- **971 commits** in the vault's git history, starting 2022-11-09.
-- **50 dailies** carry a gardener digest, and there are **58 "promoted to" markers**. The weekly gardener reports 0 orphans.
+- **412 dailies** since 2022-03-29.
+- **184 notes** in one flat `Notes/` folder, plus 7 project folders.
+- **1,021 commits** in the vault's git history, starting 2022-11-09.
+- **74 dailies** carry a daily gardener digest and **18** carry a weekly one. **29** have an agent work log.
+- **47 "promoted to" markers** in the dailies. The September count of 58 likely included matches outside the dailies, so don't read this as markers disappearing.
 
 ### Timeline
 
@@ -102,18 +103,21 @@ Current state, counted 2026-09-29:
 - **2026-07-16:** reorg. Folders flattened, tags cut down, topic indexes built, orphans cleared, gardener built. The gardener ran propose-only for two supervised dry runs before it could write.
 - **2026-07-30:** gardener gets full autonomy to move notes out of dailies and create tasks.
 - **2026-08-17 to 08-31:** the daily's `## Notes` section becomes a "durable inbox". Anything written there gets rescanned until it's filed.
+- **2026-09-29:** Dataview removed (no release since April 2025). Every query now uses core Bases or core search. The task statuses were trimmed and `Tasks.md` was rebuilt around a status board.
+- **2026-10-28:** prev/next links come back to the daily. The Dataview removal had dropped them.
+- **2026-11-06:** the gardener chain moves from OpenCode to omp. OpenCode 2 can't run a slash command headlessly.
 
 ### Daily note structure
 
 Headings, in order:
 
 1. **☕ Morning plan**
-    - Previous/next daily links.
+    - Previous/next daily links. A Templater script writes a static `← [[prev]] · [[next]] →` line and fixes up the neighboring dailies' links.
     - Checkboxes: run the Gardener (Stream Deck); yesterday's loose ends ("still worth doing?"); scan open tasks.
-    - **Today's focus** is a bare checkbox. It's deliberately *not* tracked as a task. It's a cue, not a duplicate task list.
+    - **Today's focus** is a bare checkbox. It's deliberately *not* tracked as a task. It's a cue, not a duplicate task list. If a focus item is still open on a later day, the gardener asks once whether to `track`, `drop` or `leave` it.
     - Embedded **Needs attention** view: anything due or scheduled today or earlier.
-    - Embedded **Pick up work** panel: active projects with their checkpoint and resume cue, plus notes linked from the last 7 dailies.
-2. **🌙 Wind-down:** "Wins / done", "Carrying over", "On my mind". Carryovers get *rescheduled* in place, never copied into the next daily.
+    - Embedded **Pick up work** panel, now a Bases view: projects marked `working: true` with their checkpoint and resume cue, notes linked from recent dailies, and links to the task board, unfiled captures and recently filed notes.
+2. **🌙 Wind-down:** "Wins / done", "Open focus items" (track each one as a real task, or strike it) and "On my mind". Existing tasks get *rescheduled* in place, never copied into the next daily.
 3. **🤖 Agent work log:** generated automatically, covered below.
 4. **Notes:** the durable inbox. Anything written here is guaranteed to get filed.
 5. **Scratch:** disposable. It's allowed to stay in the daily forever.
@@ -129,17 +133,17 @@ The written morning routine is "~1 minute": open the daily, press the button, se
     - Priority shorthand: `!` / `!!` / `!!!` / `~` become Tasks-plugin priority emoji.
     - The date is a *separate* field, parsed by chrono-node (`tomorrow`, `friday`, `in 3 days`). Splitting it out means "debug friday incident" never turns into a Friday due date.
     - The script appends `- [ ] TODO …` under today's `## Tasks`.
-- The Tasks plugin's **global filter is `TODO`**. Only lines containing `TODO` count as tasks. Morning checklists and design checklists stay out of the task views.
+- The Tasks plugin's **global filter is `TODO`**. Only lines containing `TODO` count as tasks. The written rule: a `TODO` checkbox is anything that must outlive today, and a bare checkbox is a today-only checklist. Morning checklists, focus items, gardener Review lines and design checklists stay out of the task views.
 
 ### Task states
 
-Custom statuses, each with its own command and hotkey:
+Custom statuses. All except Bookmark have their own command, and so can take a hotkey:
 
-- **Todo** `[ ]`: captured, not sorted yet.
+- **Inbox** `[ ]`: captured, not sorted yet. It was called Todo until 2026-09-29.
 - **Next** `[+]`: chosen and ready. It doesn't need a deadline.
 - **Waiting** `[w]`: blocked on something named. The Scheduled date is the follow-up date.
 - **Later** `[L]`: worth keeping, but not a commitment.
-- Also **In Progress** `/`, **Cancelled** `-` and **Bookmark** `b`.
+- Also **In Progress** `/`, **Cancelled** `-` and **Bookmark** `b`. Nine unused statuses were dropped in September.
 
 Rules you set for yourself:
 
@@ -147,19 +151,19 @@ Rules you set for yourself:
 - Status and date are decided *when choosing work*, not at capture.
 - Created, done and cancelled dates are stamped automatically.
 
-`Tasks.md` sections: Overdue, Today, This week, Upcoming, Next, Waiting, Later, Inbox, **Needs a decision**, Bookmarks, Done today. "Needs a decision" holds inbox items older than 14 days, "not expired commitments".
+`Tasks.md` sections: **Today** (overdue, due or scheduled today or earlier), **Board** (Inbox, Next, Waiting and Later as columns), **Needs a decision**, **Coming up**, **Bookmarks**, **Done today**. "Needs a decision" holds inbox items older than 14 days, "not expired commitments".
 
 ### Projects
 
 - One rule for filing: an active or paused project goes in `Projects/<Project>/`, and everything else goes in `Notes/`. "When in doubt, `Notes/`."
 - Each project has one **hub note** with `status: active|paused` and `working: true|false`. `working: true` puts it on the daily's Pick up work panel.
-- Hub fields: `outcome::`, `checkpoint::`, `resume::` (the resume field is a "where was I" cue). Sections are Next (1–3 actions), Waiting, Later ("coarse checkpoints, not a second backlog"), Links and Documents.
+- Hub fields are frontmatter properties: `outcome`, `checkpoint` and `resume` (the resume field is a "where was I" cue). They used to be Dataview inline fields, but Bases can only read frontmatter. Sections are Next (1–3 actions), Waiting, Later ("coarse checkpoints, not a second backlog"), Links and Documents. Documents is a Bases view that lists the project folder's other files.
 - Finished projects move to an archive folder.
 - **`/break-down`** is an agent command. You give it a brain dump and it saves a proposed outcome, checkpoint and up to 3 actions. It creates no real tasks until you approve them. It saves your raw dump verbatim first, so the only copy never lives in chat history.
 
 ### The Gardener
 
-- **Trigger:** the Stream Deck button `🌱 Gardener`, placed under a "Daily Note" button. It opens a visible Terminal so you can watch it. The chain is button → `.command` launcher → shell script → an `opencode run` slash command. The physical button was chosen as the "existing dopamine path". A scheduled job was the alternative.
+- **Trigger:** the Stream Deck button `🌱 Gardener`, placed under a "Daily Note" button. It opens a visible Terminal so you can watch it. The chain is button → `.command` launcher → shell script → `omp -p` running each slash command. It used `opencode run` until November, when OpenCode 2 broke headless commands. The script now picks the model for each pass, and the weekly pass gets a higher reasoning level. The physical button was chosen as the "existing dopamine path". A scheduled job was the alternative.
 - **One button runs three things:** the work log, the daily gardener, then the weekly gardener if the last weekly was 7 or more days ago. Folding the weekly in means there's nothing separate to remember.
 - **Daily steps:**
     1. Move every `## Notes` capture into a real note. It uses Obsidian's own Note Composer and leaves `↪ promoted to [[Note]]` in the daily.
@@ -167,12 +171,12 @@ Rules you set for yourself:
     3. Fix tag metadata.
     4. File strays.
     5. Link new notes from a topic index and flag orphans.
-    6. Task hygiene: projects with no next action, the same broad focus 3 times in 7 days, overdue waits, duplicate tasks.
-- **Output is a digest in today's daily.** "Done" is a receipt. "Review" holds **at most 5 decisions**, "not a generated task avalanche". You tick a line and type `next`, `waiting`, `later`, `pause`, `cancel` or similar, and the next run carries it out.
+    6. Task hygiene: working projects with no chosen next action, the same broad focus 3 times in 7 days, waits whose follow-up date has passed, focus items left open, inbox items older than 14 days, duplicate tasks, and idle projects.
+- **Output is a digest in today's daily.** "Done" is a receipt. "Review" holds **at most 5 decisions**, "not a generated task avalanche". You tick a line and type `next`, `waiting`, `later`, `break down`, `accept`, `track`, `reschedule <date>`, `pause`, `cancel` or `leave`, and the next run carries it out. A bare tick means "seen", not yes.
 - **Finding vs. deciding:** the agent finds stale things and carries out your answers. It never decides on its own whether a stale task or idle project still matters.
 - **No state file.** "Last run" is the newest daily that has a digest.
 - **Safety net:** Home has an "Unprocessed captures" view that lists anything still sitting under a daily's Notes, independent of the gardener.
-- **Weekly pass:** merges tags, re-sorts topic indexes (it flags one when it nears about 75 links), and finds archive candidates. Judgment calls show up as a `garden: …` line you approve by ticking.
+- **Weekly pass:** merges tags, re-curates topic indexes (it suggests splitting one past about 25 curated links), and proposes archiving dead stubs. A dead stub is untouched for about 6 months, under about 15 lines, and has at most one link each way. It applies only safe, reversible fixes on its own. Judgment calls show up as an exact `- [ ] garden: …` line. Ticking one is the approval, and it makes the next button press run the weekly pass early.
 
 Bugs you hit, which could make good anecdotes:
 
@@ -187,7 +191,7 @@ Bugs you hit, which could make good anecdotes:
 
 ### Plumbing
 
-- **Plugins:** Dataview, Tasks, Templater, Linter (enforces tag format on save), obsidian-git, Calendar, Advanced URI, Local REST API, Tag Wrangler, Iconize, Bases (`Browse.base` is a table-view index).
+- **Plugins:** Tasks, Templater, Linter (enforces tag format on save), obsidian-git, Calendar, Advanced URI, Local REST API, Tag Wrangler, Iconize, Pandoc, plus a few editor and callout plugins. Dataview is gone. Queries use core **Bases** (`Browse.base` is a table-view index, `Dashboard.base` feeds Home and the daily) and core search. There's also a homemade plugin that publishes a note to an internal wiki. Leave that out of the post or keep it vague.
 - **Git:** auto-commits every 5 minutes and pushes every 6 hours. **Dailies are git-ignored**, so only filed notes are versioned.
 - Agents use the Obsidian CLI (`obsidian move`, `obsidian eval`) so wikilinks update when notes move.
 - There's a private folder that agents are told never to read.
